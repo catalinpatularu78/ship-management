@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('checkout'){
 			steps {
-				git https://github.com/catalinpatularu78/ship-management.git
+				git 'https://github.com/catalinpatularu78/ship-management.git'
 			}
 		}
 		stage('Build'){
