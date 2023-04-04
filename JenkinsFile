@@ -1,0 +1,26 @@
+pipeline {
+	agent any
+	stages {
+		stage('checkout'){
+			steps {
+				git https://github.com/catalinpatularu78/ship-management.git
+			}
+		}
+		stage('Build'){
+			steps {
+				bat "mvn clean compile"
+			}
+		}
+		stage('test'){
+			steps {
+			 	bat "mvn test"
+			 	junit '**/target/surefire-reports/TEST-*.xml'
+			 }
+		}
+		stage('Package') {
+			steps {
+				bat "mvn package"
+			}
+		}		
+	}
+}
