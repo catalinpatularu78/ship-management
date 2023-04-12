@@ -46,7 +46,7 @@ class ShipAppIT {
 	@Test
 	@Sql({ "/testdata.sql" })
 	public void addShipTest() {
-		HttpEntity<Ship> request = new HttpEntity<Ship>(
+		HttpEntity<Ship> request = new HttpEntity<>(
 				buildShip(264535335, "ESPINOZA", 200, "SPAIN", "BARCELONA", "MALLORCA"), headers);
 		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + port + "/api/ships/ship",
 				request, String.class);
@@ -56,7 +56,7 @@ class ShipAppIT {
 	@Test
 	@Sql({ "/testdata.sql" })
 	public void addShipBadRequestTest() {
-		HttpEntity<Ship> request = new HttpEntity<Ship>(null, headers);
+		HttpEntity<Ship> request = new HttpEntity<>(null, headers);
 		ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:" + port + "/api/ships/ship",
 				request, String.class);
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());

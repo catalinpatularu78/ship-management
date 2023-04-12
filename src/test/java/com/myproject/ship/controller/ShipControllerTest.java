@@ -53,7 +53,7 @@ class ShipControllerTest {
 
 	@Test
 	public void getAllShipsControllerTest() throws Exception {
-		List<Ship> ships = new ArrayList<Ship>();
+		List<Ship> ships = new ArrayList<>();
 		ships.add(buildShip());
 		when(shipservice.getAllShips()).thenReturn(ships);
 		when(shipRepo.findAll()).thenReturn(ships);
@@ -64,7 +64,7 @@ class ShipControllerTest {
 
 	@Test
 	public void getAllShipsEmptyListControllerTest() throws Exception {
-		List<Ship> ships = new ArrayList<Ship>();
+		List<Ship> ships = new ArrayList<>();
 		when(shipservice.getAllShips()).thenReturn(ships);
 		when(shipRepo.findAll()).thenReturn(ships);
 

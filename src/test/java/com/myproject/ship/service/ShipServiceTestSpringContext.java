@@ -35,8 +35,8 @@ class ShipServiceTestSpringContext {
 	}
 
 	@Test
-	void testGetAllShips() throws Exception {
-		List<Ship> ships = new ArrayList<Ship>();
+	void testGetAllShips() {
+		List<Ship> ships = new ArrayList<>();
 		ships.add(ship);
 		when(shipRepo.findAll()).thenReturn(ships);
 
@@ -52,8 +52,7 @@ class ShipServiceTestSpringContext {
 	}
 
 	@Test
-	void testGetShipById() throws Exception {
-		Ship ship = buildShip();
+	void testGetShipById() {
 		Optional<Ship> shipOpt = Optional.of(ship);
 		when(shipRepo.findById(any())).thenReturn(shipOpt);
 
@@ -68,8 +67,7 @@ class ShipServiceTestSpringContext {
 	}
 
 	@Test
-	public void testDeleteShipById() throws Exception {
-		Ship ship = buildShip();
+	public void testDeleteShipById() {
 		doNothing().when(shipRepo).deleteById(1L);
 		shipService.deleteShipById(1L);
 

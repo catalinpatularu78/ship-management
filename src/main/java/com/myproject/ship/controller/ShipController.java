@@ -43,7 +43,7 @@ public class ShipController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<?> getId(@PathVariable(value = "id") Long shipId) {
+	public ResponseEntity getId(@PathVariable(value = "id") Long shipId) {
 		Optional<Ship> ship = shipRepo.findById(shipId);
 		if (ship.isPresent())
 			return ResponseEntity.status(HttpStatus.OK).body((ship));
