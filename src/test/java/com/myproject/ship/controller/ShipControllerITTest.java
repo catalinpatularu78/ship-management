@@ -22,7 +22,7 @@ import com.myproject.ship.entity.Ship;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-class ShipAppIT {
+class ShipControllerITTest {
 
 	@Value(value = "${local.server.port}")
 	private int port;

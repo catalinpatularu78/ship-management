@@ -20,7 +20,7 @@ import com.myproject.ship.dao.ShipRepository;
 import com.myproject.ship.entity.Ship;
 
 @SpringBootTest
-class ShipServiceTestSpringContext {
+class ShipServiceTest {
 	Ship ship;
 
 	@Autowired
