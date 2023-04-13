@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	stages {
-		stage('checkout'){
+		stage('Checkout'){
 			steps {
 				git 'https://github.com/catalinpatularu78/ship-management.git'
 			}
@@ -11,7 +11,7 @@ pipeline {
 				bat "mvn clean compile"
 			}
 		}
-		stage('test'){
+		stage('Test'){
 			steps {
 			 	bat "mvn test"
 			 	junit '**/target/surefire-reports/TEST-*.xml'
@@ -22,13 +22,10 @@ pipeline {
 				bat "mvn package"
 			}
 		}	
-		stage('build && SonarQube analysis') {
+		stage('SonarQube') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    // Optionally use a Maven environment you've configured already
-                    withMaven(maven:'Maven 3.5') {
-                        sh 'mvn clean package sonar:sonar'
-                    }
+                  bat "mvn clean package sonar:sonar"
                 }
             }
         }
