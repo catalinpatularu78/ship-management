@@ -39,7 +39,6 @@ public class ShipController {
 		} else {
 			return (ResponseEntity) ResponseEntity.status(HttpStatus.OK).body(ships);
 		}
-
 	}
 
 	@GetMapping("/{id}")
