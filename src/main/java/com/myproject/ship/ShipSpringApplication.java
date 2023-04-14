@@ -10,5 +10,4 @@ public class ShipSpringApplication {
 		SpringApplication.run(ShipSpringApplication.class, args);
 
 	}
-
 }
